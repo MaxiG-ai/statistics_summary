@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/ArrayProperties.spec.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1643212334836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1643212359391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import { ArrayProperties } from \"./ArrayProperties.ts\"\n \n \n-Deno.test(\"should provide the highest common denominator\", async () => {\n+Deno.test(\"should yield correct values for mean/variance/stdev\", async () => {\n \n     assertEquals(ArrayProperties.getMean([4, 5, 6]), 5)\n \n     assertEquals(ArrayProperties.getVariancePopulation([4, 5, 6]), 2/3)\n"
+                }
+            ],
+            "date": 1643212334836,
+            "name": "Commit-0",
+            "content": "import { assertEquals } from \"https://deno.land/std@0.86.0/testing/asserts.ts\"\n\nimport { ArrayProperties } from \"./ArrayProperties.ts\"\n\n\nDeno.test(\"should provide the highest common denominator\", async () => {\n\n    assertEquals(ArrayProperties.getMean([4, 5, 6]), 5)\n\n    assertEquals(ArrayProperties.getVariancePopulation([4, 5, 6]), 2/3)\n\n    assertEquals(ArrayProperties.getVarianceSample([4, 5, 6]), 1)\n\n    assertEquals(ArrayProperties.getStdevPopulation([4, 5, 6]), Math.sqrt(2/3))\n\n    assertEquals(ArrayProperties.getStdevSample([4, 5, 6]), 1)\n\n})"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1643210279486,
@@ -12,6 +12,14 @@
                 {
                     "date": 1643210523141,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,9 @@\n # statistics_summary\n \n A simple module to get statistical porperties of an array. Currently the possible properties are mean, stdev and variance.\n+\n+You can test the function using the follwing example via CLI.\n+\n+```\n+deno run --allow-net https://deno.land/x/array_summary@0.0.2/mod-test.ts\n+```\n"
+                },
+                {
+                    "date": 1643210617914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n \n You can test the function using the follwing example via CLI.\n \n ```\n-deno run --allow-net https://deno.land/x/array_summary@0.0.2/mod-test.ts\n+deno run --allow-net https://deno.land/x/array_summary@0.0.4/mod-test.ts\n ```\n"
+                },
+                {
+                    "date": 1643212644328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,30 @@\n \n ```\n deno run --allow-net https://deno.land/x/array_summary@0.0.4/mod-test.ts\n ```\n+\n+or you can implement using the following usage examples:\n+\n+````\n+import { ArrayProperties } from \"https://deno.land/x/array_summary@0.0.4/mod-test.ts\";\n+\n+const randomNumbers: number[] = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6]\n+\n+// Console log every function with sample array\n+console.log(ArrayProperties.getMean(randomNumbers))\n+console.log(ArrayProperties.getVariancePopulation(randomNumbers))\n+console.log(ArrayProperties.getVarianceSample(randomNumbers))\n+console.log(ArrayProperties.getStdevPopulation(randomNumbers))\n+console.log(ArrayProperties.getStdevSample(randomNumbers))\n+\n+// or get the full summary \n+// use true to specifiy the array as a sample or false for the population\n+\n+ArrayProperties.printSummary(randomNumbers, true)\n+````\n+\n+The module is covered by unit-tests which you can see in \"./src/ArrayProperties.spec.ts\". You can run them by:\n+\n+````\n+deno run --allow-net https://deno.land/x/gethighestcommondenominator@v1.0.0/src/getHighestCommonDenominator.spec.ts\n+````\n"
                 }
             ],
             "date": 1643210279486,
