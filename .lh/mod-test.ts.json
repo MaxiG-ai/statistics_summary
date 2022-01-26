@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1643190264629,
@@ -16,6 +16,14 @@
                 {
                     "date": 1643190550916,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import { ArrayProperties } from \"./mod.ts\"\n \n-const randomNumbers: number[] = [5,7,1986,75,586,78,278,4,5,5,1,2,3,4,5,6,7,8,915,15,43,87]\n+const randomNumbers: number[] = [5,7,16,75,56,78,278,4,5,5,1,2,3,4,5,6,7,8,91,15,43,87]\n \n ArrayProperties.printSummary(randomNumbers)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643207398517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { ArrayProperties } from \"./mod.ts\"\n+import { ArrayProperties } from \"./mod.ts\";\n \n const randomNumbers: number[] = [5,7,16,75,56,78,278,4,5,5,1,2,3,4,5,6,7,8,91,15,43,87]\n \n ArrayProperties.printSummary(randomNumbers)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643207978524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,12 @@\n import { ArrayProperties } from \"./mod.ts\";\n \n const randomNumbers: number[] = [5,7,16,75,56,78,278,4,5,5,1,2,3,4,5,6,7,8,91,15,43,87]\n \n+// Console log every function with sample array\n+console.log(ArrayProperties.getMean(randomNumbers))\n+console.log(ArrayProperties.getVariancePopulation(randomNumbers))\n+console.log(ArrayProperties.getVarianceSample(randomNumbers))\n+console.log(ArrayProperties.getStdevPopulation(randomNumbers))\n+console.log(ArrayProperties.getStdevSample(randomNumbers))\n+\n ArrayProperties.printSummary(randomNumbers)\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1643190264629,

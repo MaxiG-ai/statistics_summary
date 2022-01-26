@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1643189630856,
@@ -20,6 +20,14 @@
                 {
                     "date": 1643190217263,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-export class ArrayAnalytics {\n+export class ArrayProperties {\n   public static getMean(arr: number[]) {\n     var sum = 0;\n     //loop and sum all elements in array\n     for (var i in arr) {\n@@ -13,9 +13,9 @@\n     return (sum / n);\n   }\n \n   public static getVariancePopulation(arr: number[]) {\n-    var mean = getMean(arr);\n+    var mean = this.getMean(arr);\n     var sum_squared_differences = 0;\n     for (var i in arr) {\n       sum_squared_differences += (arr[i] - mean) ** 2;\n     }\n@@ -24,9 +24,9 @@\n     return (sum_squared_differences / n);\n   }\n \n   public static getVarianceSample(arr: number[]) {\n-    var mean = getMean(arr);\n+    var mean = this.getMean(arr);\n     var sum_squared_differences = 0;\n     for (var i in arr) {\n       sum_squared_differences += (arr[i] - mean) ** 2;\n     }\n@@ -36,23 +36,23 @@\n   }\n \n   public static getStdevPopulation(arr: number[]) {\n     //return sqrt of the population variance\n-    return Math.sqrt(getVariancePopulation(arr));\n+    return Math.sqrt(this.getVariancePopulation(arr));\n   }\n \n   public static getStdevSample(arr: number[]) {\n     //return sqrt of the sample variance\n-    return Math.sqrt(getVarianceSample(arr));\n+    return Math.sqrt(this.getVarianceSample(arr));\n   }\n \n   public static printSummary(arr: number[], sample = false) {\n     if (sample) {\n-      console.log(`Mean:                  ${getMean}`);\n-      console.log(`Variance:              ${getVarianceSample}`);\n-      console.log(`Standard Deviation:    ${getStdevSample}`);\n+      console.log(`Mean:                  ${this.getMean}`);\n+      console.log(`Variance:              ${this.getVarianceSample}`);\n+      console.log(`Standard Deviation:    ${this.getStdevSample}`);\n     }\n-    console.log(`Mean:                  ${getMean}`);\n-    console.log(`Variance:              ${getVariancePopulation}`);\n-    console.log(`Standard Deviation:    ${getStdevPopulation}`);\n+    console.log(`Mean:                  ${this.getMean}`);\n+    console.log(`Variance:              ${this.getVariancePopulation}`);\n+    console.log(`Standard Deviation:    ${this.getStdevPopulation}`);\n   }\n }\n"
+                },
+                {
+                    "date": 1643207673398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,13 +46,13 @@\n   }\n \n   public static printSummary(arr: number[], sample = false) {\n     if (sample) {\n-      console.log(`Mean:                  ${this.getMean}`);\n-      console.log(`Variance:              ${this.getVarianceSample}`);\n-      console.log(`Standard Deviation:    ${this.getStdevSample}`);\n+      console.log(`Mean:                  ${this.getMean(arr)}`);\n+      console.log(`Variance:              ${this.getVarianceSample(arr)}`);\n+      console.log(`Standard Deviation:    ${this.getStdevSample(arr)}`);\n     }\n-    console.log(`Mean:                  ${this.getMean}`);\n-    console.log(`Variance:              ${this.getVariancePopulation}`);\n-    console.log(`Standard Deviation:    ${this.getStdevPopulation}`);\n+    console.log(`Mean:                  ${this.getMean(arr)}`);\n+    console.log(`Variance:              ${this.getVariancePopulation(arr)}`);\n+    console.log(`Standard Deviation:    ${this.getStdevPopulation(arr)}`);\n   }\n }\n"
+                },
+                {
+                    "date": 1643207697463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,5 +54,5 @@\n     console.log(`Mean:                  ${this.getMean(arr)}`);\n     console.log(`Variance:              ${this.getVariancePopulation(arr)}`);\n     console.log(`Standard Deviation:    ${this.getStdevPopulation(arr)}`);\n   }\n-}\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1643189630856,

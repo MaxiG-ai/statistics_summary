@@ -47,12 +47,12 @@ export class ArrayProperties {
 
   public static printSummary(arr: number[], sample = false) {
     if (sample) {
-      console.log(`Mean:                  ${this.getMean}`);
-      console.log(`Variance:              ${this.getVarianceSample}`);
-      console.log(`Standard Deviation:    ${this.getStdevSample}`);
+      console.log(`Mean:                  ${this.getMean(arr)}`);
+      console.log(`Variance:              ${this.getVarianceSample(arr)}`);
+      console.log(`Standard Deviation:    ${this.getStdevSample(arr)}`);
     }
-    console.log(`Mean:                  ${this.getMean}`);
-    console.log(`Variance:              ${this.getVariancePopulation}`);
-    console.log(`Standard Deviation:    ${this.getStdevPopulation}`);
+    console.log(`Mean:                  ${this.getMean(arr)}`);
+    console.log(`Variance:              ${this.getVariancePopulation(arr)}`);
+    console.log(`Standard Deviation:    ${this.getStdevPopulation(arr)}`);
   }
 }
