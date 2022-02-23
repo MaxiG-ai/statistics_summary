@@ -40,5 +40,5 @@ ArrayProperties.printSummary(randomNumbers, true)
 The module is covered by unit-tests which you can see in "./src/ArrayProperties_test.spec.ts". You can test the module yourself by:
 
 ````
-deno run --allow-net "https://deno.land/x/array_summary@0.2/src/ArrayProperties_test.spec.ts"
+deno test --allow-net "https://deno.land/x/array_summary@0.2/src/ArrayProperties_test.spec.ts"
 ````
